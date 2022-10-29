@@ -14,10 +14,14 @@ const Feed = () => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
+    console.log(videos);
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
+    <Stack
+      sx={{ flexDirection: { sx: 'column', md: 'row' } }}
+      style={{ backgroundColor: '#0f0f0f', overflow: 'hidden' }}
+    >
       <Box
         sx={{
           height: { sx: 'auto', md: '92vh' },
@@ -34,15 +38,16 @@ const Feed = () => {
       <Box
         p={2}
         sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}
-        style={{ backgroundColor: '#0f0f0f' }}
+        style={{ backgroundColor: '#141414' }}
       >
         <Typography
           variant='h4'
           fontWeight='bold'
           mb={2}
           sx={{ color: 'white' }}
+          className='feed-title'
         >
-          {selectedCategory} <span style={{ color: '#FC1503' }}>videos</span>
+          {selectedCategory} <span style={{ color: '#FC1503' }}>Videos</span>
         </Typography>
 
         <Videos videos={videos} />

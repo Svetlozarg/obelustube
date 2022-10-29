@@ -15,9 +15,12 @@ const Navbar = () => (
       top: 0,
       justifyContent: 'space-between',
     }}
+    style={{ backgroundColor: '#0f0f0f', zIndex: '999', overflow: 'hidden' }}
+    className='navbar'
   >
     <Link to='/' style={{ display: 'flex', alignItems: 'center' }}>
       <img src={logo} alt='logo' height={45} />
+      <h1 style={{ color: '#fff', marginLeft: '1rem' }}>ObelusTube</h1>
     </Link>
     <SearchBar />
   </Stack>
